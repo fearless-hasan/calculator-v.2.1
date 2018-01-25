@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Calculator (v.2.1)</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+
+
+
+<div class="container-fluid" style="padding-top: 50px;">
+	<div class="row">
+		<div class="col-8 col-lg-6 col-xl-4 col-md-8 col-sm-8 m-auto">
+			<div class="card">
+				<div class="card-body" style="padding: 30px;">
+					<div class="row form-group"  style="text-align: right; border:none; margin: 0px;">
+						<output  style="text-align: right; width: 100%" id="resultString"></output>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-1 " style="padding: 0px; margin: auto; height: 100px;">
+							<output name="flag_minus" id="flagMinus" class="form-control align-middle" style="height: 100%; position: relative; font-size: 22px; width: 100%; border-right: none; border-top-right-radius: 0rem; border-bottom-right-radius: 0rem; padding-top: 100%;" ></output>
+						</div>
+						<div class="col-sm-11" style=" padding: 0px;height: 100px;">
+							<input type="text" name="result" id="result" class="form-control" value="0" style="text-align: right; height: 100%; width: 100%; font-size: 22px; border-left: none; border-top-left-radius: 0rem; border-bottom-left-radius: 0rem; ">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-3">
+							<input type="submit" name="c" id="c" class="btn btn-danger form-control" value="C" data-role="specialOperator">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="ce" id="ce" class="btn btn-outline-dark form-control" value="CE" data-role="specialOperator">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="backspace" id="backspace" class="btn btn-outline-secondary form-control" value="<-" data-role="specialOperator">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="inverse" id="inverse" class="btn btn-outline-secondary form-control" value="1/X" data-role="specialOperator">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-3">
+							<input type="submit" name="sqrt" id="sqrt" class="btn btn-outline-warning form-control" value="&Sqrt;" data-role="specialOperator">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="square" id="square" class="btn btn-outline-warning form-control" value="X^2" data-role="specialOperator">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="remainder" id="remainder" class="btn btn-outline-warning form-control" value="%" data-role="operator">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="division" id="division" class="btn btn-outline-info form-control" value="/" data-role="operator">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-3">
+							<input type="submit" name="seven" id="seven" class="btn btn-outline-success form-control" value="7" data-role="number">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="eight" id="eight" class="btn btn-outline-success form-control" value="8" data-role="number">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="nine" id="nine" class="btn btn-outline-success form-control" value="9" data-role="number">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="multiplication" id="multiplication" class="btn btn-outline-info form-control" value="*" data-role="operator">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-3">
+							<input type="submit" name="four" id="four" class="btn btn-outline-success form-control" value="4" data-role="number">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="five" id="five" class="btn btn-outline-success form-control" value="5" data-role="number">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="six" id="six" class="btn btn-outline-success form-control" value="6" data-role="number">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="subtraction" id="subtraction" class="btn btn-outline-info form-control" value="-" data-role="operator">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-3">
+							<input type="submit" name="one" id="one" class="btn btn-outline-success form-control" value="1" data-role="number">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="two" id="two" class="btn btn-outline-success form-control" value="2" data-role="number">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="three" id="three" class="btn btn-outline-success form-control" value="3" data-role="number">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="addition" id="addition" class="btn btn-outline-info form-control" value="+" data-role="operator">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-3">
+							<input type="submit" name="reverse" id="reverse" class="btn btn-outline-warning form-control" value="+/-" data-role="specialOperator">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="zero" id="zero" class="btn btn-outline-success form-control" value="0" data-role="number">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="point" id="point" class="btn btn-outline-warning form-control" value="." data-role="number">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="equal" id="equal" class="btn btn-success form-control" value="=" data-role="operator">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/simple-calculator.js"></script>
+
+</body>
+</html>
+
+
+
